@@ -25,6 +25,23 @@ function App() {
           <a href="#education">Education</a>
           <a href="#contact">Contact</a>
         </div>
+        <div className="socialLinks">
+  <a
+    href="https://github.com/anuhyamutyala"
+    target="_blank"
+    rel="noreferrer"
+  >
+    GitHub
+  </a>
+
+  <a
+    href="https://www.linkedin.com/in/srilakshmianuhya"
+    target="_blank"
+    rel="noreferrer"
+  >
+    LinkedIn
+  </a>
+</div>
       </nav>
 
       <main>
@@ -51,7 +68,7 @@ function App() {
                 <span>→</span>
               </a>
 
-              <a href="#resume" className="secondaryButton">
+              <a href="Anuhya_Mutyala_Resume.pdf" className="secondaryButton" download>
                 Download Resume
                 <span>↓</span>
               </a>

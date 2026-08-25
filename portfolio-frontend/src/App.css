@@ -116,6 +116,20 @@
   width: 100%;
 }
 
+.socialLinks {
+  display: flex;
+  gap: 16px;
+}
+
+.socialLinks a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.socialLinks a:hover {
+  color: #c4b5fd;
+}
 
 /* ================================
    HERO
@@ -1098,6 +1112,17 @@
   border-radius: 14px;
 }
 
+.formStatus {
+  margin-top: 16px;
+  color: #c4b5fd;
+  text-align: center;
+  font-size: 14px;
+}
+
+.sendButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 .formGroup {
   display: flex;
 

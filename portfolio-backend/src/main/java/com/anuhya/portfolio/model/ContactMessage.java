@@ -1,13 +1,9 @@
 package com.anuhya.portfolio.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "contact_messages")
@@ -18,13 +14,16 @@ public class ContactMessage {
     private Long id;
 
     @NotBlank
+    @Size(max = 100)
     private String name;
 
     @NotBlank
     @Email
+    @Size(max = 150)
     private String email;
 
     @NotBlank
+    @Size(max = 2000)
     @Column(length = 2000)
     private String message;
 

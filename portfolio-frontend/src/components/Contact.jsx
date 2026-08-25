@@ -1,7 +1,9 @@
 import { useState } from "react"
 
-function Contact() {
+const API_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:8080"
 
+function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -10,7 +12,6 @@ function Contact() {
 
   const [status, setStatus] = useState("")
   const [loading, setLoading] = useState(false)
-
 
   const handleChange = (event) => {
     const { name, value } = event.target
@@ -21,7 +22,6 @@ function Contact() {
     }))
   }
 
-
   const handleSubmit = async (event) => {
     event.preventDefault()
 
@@ -30,14 +30,12 @@ function Contact() {
 
     try {
       const response = await fetch(
-        "http://localhost:8080/api/contact",
+        `${API_URL}/api/contact`,
         {
           method: "POST",
-
           headers: {
             "Content-Type": "application/json"
           },
-
           body: JSON.stringify(formData)
         }
       )
@@ -57,77 +55,164 @@ function Contact() {
     } catch (error) {
       console.error(error)
 
-      setStatus("Something went wrong. Please try again.")
+      setStatus(
+        "Something went wrong. Please try again."
+      )
 
     } finally {
       setLoading(false)
     }
   }
 
-
   return (
     <section className="contact section" id="contact">
 
+      <p className="sectionLabel">
+        LET'S CONNECT
+      </p>
 
-      <form
-        className="contactForm"
-        onSubmit={handleSubmit}
-      >
+      <h2 className="sectionTitle">
+        Get In Touch
+      </h2>
 
-        <div className="formGroup">
-          <label>Name</label>
+      <p className="contactIntro">
+        I'm open to software engineering opportunities and would
+        be happy to connect and discuss how my experience can
+        contribute to your team.
+      </p>
 
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Your name"
-            required
-          />
+      <div className="contactContainer">
+
+        <div className="contactInfo">
+
+          <div className="contactItem">
+            <span className="contactIcon">✉</span>
+
+            <div>
+              <p>Email</p>
+
+              <a href="mailto:anuhyamutyala9@gmail.com">
+                anuhyamutyala9@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <div className="contactItem">
+            <span className="contactIcon">☎</span>
+
+            <div>
+              <p>Phone</p>
+
+              <a href="tel:+14696888605">
+                +1 (469) 688-8605
+              </a>
+            </div>
+          </div>
+
+          <div className="contactItem">
+            <span className="contactIcon">
+              in
+            </span>
+
+            <div>
+              <p>LinkedIn</p>
+
+              <a
+                href="https://www.linkedin.com/in/srilakshmianuhya"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Connect on LinkedIn
+              </a>
+            </div>
+          </div>
+
+          <div className="contactItem">
+            <span className="contactIcon">
+              &lt;/&gt;
+            </span>
+
+            <div>
+              <p>GitHub</p>
+
+              <a
+                href="https://github.com/anuhyamutyala"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View GitHub Profile
+              </a>
+            </div>
+          </div>
+
         </div>
 
-        <div className="formGroup">
-          <label>Email</label>
-
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="your@email.com"
-            required
-          />
-        </div>
-
-        <div className="formGroup">
-          <label>Message</label>
-
-          <textarea
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            rows="6"
-            placeholder="Your message..."
-            required
-          />
-        </div>
-
-        <button
-          type="submit"
-          className="sendButton"
-          disabled={loading}
+        <form
+          className="contactForm"
+          onSubmit={handleSubmit}
         >
-          {loading ? "Sending..." : "Send Message →"}
-        </button>
 
-        {status && (
-          <p className="formStatus">
-            {status}
-          </p>
-        )}
+          <div className="formGroup">
+            <label>Name</label>
 
-      </form>
+            <input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Your name"
+              maxLength="100"
+              required
+            />
+          </div>
+
+          <div className="formGroup">
+            <label>Email</label>
+
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="your@email.com"
+              maxLength="150"
+              required
+            />
+          </div>
+
+          <div className="formGroup">
+            <label>Message</label>
+
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              rows="6"
+              placeholder="Your message..."
+              maxLength="2000"
+              required
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="sendButton"
+            disabled={loading}
+          >
+            {loading
+              ? "Sending..."
+              : "Send Message →"}
+          </button>
+
+          {status && (
+            <p className="formStatus">
+              {status}
+            </p>
+          )}
+
+        </form>
+
+      </div>
 
     </section>
   )

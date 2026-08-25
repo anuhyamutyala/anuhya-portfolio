@@ -13,7 +13,6 @@ public class ContactService {
     public ContactService(
             ContactRepository contactRepository,
             EmailService emailService) {
-
         this.contactRepository = contactRepository;
         this.emailService = emailService;
     }
@@ -23,7 +22,13 @@ public class ContactService {
         ContactMessage savedMessage =
                 contactRepository.save(message);
 
-        emailService.sendContactNotification(savedMessage);
+        try {
+            emailService.sendContactNotification(savedMessage);
+        } catch (Exception e) {
+            System.err.println(
+                    "Email notification failed: " + e.getMessage()
+            );
+        }
 
         return savedMessage;
     }

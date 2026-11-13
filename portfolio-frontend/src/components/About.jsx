@@ -9,14 +9,15 @@ function About() {
 
         <p>
           I'm a Software Engineer with 3+ years of experience developing
-          enterprise and full-stack applications using Java, Spring Boot,
-          Microservices, React.js, REST APIs, and SQL databases.
+          enterprise and full-stack applications using Java, Spring Boot, 
+          React.js, REST APIs, python, AWS, and SQL databases.
+          
         </p>
 
         <p>
           My experience includes building scalable backend services,
           developing secure APIs, working with event-driven systems using
-          Kafka, optimizing databases, and supporting production applications.
+          optimizing databases, and supporting production applications.
         </p>
 
         <p>

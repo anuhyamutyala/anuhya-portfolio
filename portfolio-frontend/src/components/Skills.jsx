@@ -1,7 +1,7 @@
 const skillGroups = [
   {
     title: "Backend",
-    skills: ["Java", "Spring Boot", "J2EE", "Microservices", "REST APIs"]
+    skills: ["Java", "Python", "Spring Boot", "J2EE", "Microservices", "REST APIs"]
   },
   {
     title: "Frontend",
@@ -9,15 +9,19 @@ const skillGroups = [
   },
   {
     title: "Databases",
-    skills: ["PostgreSQL", "MySQL", "Oracle", "Redis", "Elasticsearch"]
+    skills: ["PostgreSQL", "MySQL", "Oracle"]
+  },
+  {
+    title: "Data Engineering",
+    skills: ["ETL Pipelines", "Data Migration", "Data Transformation", "Data Quality Validation"]
   },
   {
     title: "Cloud & DevOps",
-    skills: ["AWS", "Docker", "Kubernetes", "Azure DevOps", "CI/CD"]
+    skills: ["AWS", "Azure DevOps", "CI/CD"]
   },
   {
     title: "Tools & Testing",
-    skills: ["Git", "Maven", "Postman", "JUnit", "Mockito"]
+    skills: ["Git", "Maven", "Postman", "JUnit", "Mockito", "Great Expectations (GX)", "Domo", "Bitbucket"]
   },
   {
     title: "Other",

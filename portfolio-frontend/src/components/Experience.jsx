@@ -2,6 +2,19 @@ import { useState } from "react"
 
 const experiences = [
   {
+  role: "Software Engineering Co-op",
+  company: "Solü Technology Partners",
+  period: "October 2026 – Present",
+  points: [
+    "Developed Python ETL pipelines for legacy broadband data migration to Gaiia.",
+    "Implemented transformations for BT Tickets, Ticket Types, and Ticket Comments.",
+    "Used UUID5 to generate consistent reference IDs and reduce collision risks.",
+    "Built automated data quality checks using Great Expectations.",
+    "Integrated Domo for staging and publishing transformed datasets.",
+    "Collaborated through Git pull requests, code reviews, and Agile meetings."
+   ]
+  },
+  {
     role: "Java Developer",
     company: "Technivio",
     period: "Jan 2026 - May 2026",
